@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:staticExtensionApp="clr-namespace:StaticExtensionApp.ClassLibrary;assembly=StaticExtensionApp.ClassLibrary"
+             x:Class="StaticExtensionApp.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label FontSize="18"
+                   HorizontalOptions="Center">
+
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Application constant value: " />
+                        <Span Text="{x:Static staticExtensionApp:ApplicationConstants+IconCodes.ExampleIconCode}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
