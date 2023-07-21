@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:staticExtensionApp="clr-namespace:StaticExtensionApp.ClassLibrary;assembly=StaticExtensionApp.ClassLibrary"
+             xmlns:library="clr-namespace:StaticExtensionApp.ClassLibrary;assembly=StaticExtensionApp.ClassLibrary"
+             xmlns:staticExtensionApp="clr-namespace:StaticExtensionApp"
              x:Class="StaticExtensionApp.MainPage">
 
     <ScrollView>
@@ -10,13 +11,40 @@
             Padding="30,0"
             VerticalOptions="Center">
 
-            <Label FontSize="18"
-                   HorizontalOptions="Center">
-
+            <Label FontSize="18">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="Application constant value: " />
+                        <Span Text="Application constant value: " FontAttributes="Bold" />
+                        <Span Text="{x:Static staticExtensionApp:ApplicationConstants.ExampleConstant}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label FontSize="18">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Icon code value: " FontAttributes="Bold" />
                         <Span Text="{x:Static staticExtensionApp:ApplicationConstants+IconCodes.ExampleIconCode}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label FontSize="18">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Library constant value: " FontAttributes="Bold" />
+                        <Span Text="{x:Static library:LibraryConstants.LibraryConstant}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <!-- Commenting out the Label below allows the app to build -->
+
+            <Label FontSize="18">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Library icon code value: " />
+                        <Span Text="{x:Static library:LibraryConstants+LibraryIconCodes.LibraryIconCode}" />
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
